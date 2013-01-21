@@ -22,4 +22,5 @@ apt_repository "dotdeb-php54" do
   distribution "squeeze-php54"
   components ["all"]
   key "http://www.dotdeb.org/dotdeb.gpg"
+  notifies :run, resources(:execute => "apt-get update"), :immediately
 end

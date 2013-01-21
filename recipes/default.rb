@@ -22,4 +22,5 @@ apt_repository "dotdeb" do
   distribution "squeeze"
   components ["all"]
   key "http://www.dotdeb.org/dotdeb.gpg"
+  notifies :run, resources(:execute => "apt-get update"), :immediately
 end
